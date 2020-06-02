@@ -5,3 +5,9 @@ if xinput list-props "ELAN Touchscreen" | grep -q 'Device Enabled.*:.*1$'
 else if xinput list-props "ELAN Touchscreen" | grep -q 'Device Enabled.*:.*0$'
 	xinput enable "ELAN Touchscreen"
 end
+
+if xinput list-props "Wacom HID 490B Finger" | grep -q 'Device Enabled.*:.*1$'
+	xinput disable "Wacom HID 490B Finger"
+else if xinput list-props "Wacom HID 490B Finger" | grep -q 'Device Enabled.*:.*0$'
+	xinput enable "Wacom HID 490B Finger"
+end
