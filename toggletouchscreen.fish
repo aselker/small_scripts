@@ -11,3 +11,11 @@ if xinput list-props "Wacom HID 490B Finger" | grep -q 'Device Enabled.*:.*1$'
 else if xinput list-props "Wacom HID 490B Finger" | grep -q 'Device Enabled.*:.*0$'
 	xinput enable "Wacom HID 490B Finger"
 end
+
+if xinput list-props "Wacom Pen and multitouch sensor Finger" | grep -q 'Device Enabled.*:.*1$'
+	xinput disable "Wacom Pen and multitouch sensor Finger"
+else if xinput list-props "Wacom Pen and multitouch sensor Finger" | grep -q 'Device Enabled.*:.*0$'
+	xinput enable "Wacom Pen and multitouch sensor Finger"
+end
+
+reposition-touchscreen.sh

@@ -4,10 +4,16 @@
 # you may run into https://bugs.freedesktop.org/show_bug.cgi?id=39949
 #                  https://bugs.launchpad.net/ubuntu/+source/xorg-server/+bug/883319
 
+#xrandr --auto
+# TODO: Run 'xrandr --auto' if no other monitors are connected
 
-INT=`xrandr --current | sed 's/^\(.*\) connected.*$/\1/p;d' | grep -v ^DP | head -n 1`
+# 3840 * 3/4 = 2880
+# 2160 * 5/8 = 1350
+xrandr --output DP-2 --mode 1920x1080 --rate 120 --scale 1.5x1.5 --pos 0x1350 --output eDP-1 --pos 2880x2160 --output DP-3 --mode 1920x1080 --scale 2x2 --pos 2880x0
 
-xrandr --auto
+# TODO: Change compton settings
 
 # Set touchscreen to control only the laptop screen
-xinput | sed -n -e '/pointer/,/keyboard/ p' | grep "ELAN Touchscreen" | sed 's/^.*id=\([0-9]*\)[ \t].*$/\1/' | xargs -L 1 -I \% xinput --map-to-output \% "${INT}"
+#INT=`xrandr --current | sed 's/^\(.*\) connected.*$/\1/p;d' | grep -v ^DP | head -n 1`
+#xinput | sed -n -e '/pointer/,/keyboard/ p' | grep "ELAN Touchscreen" | sed 's/^.*id=\([0-9]*\)[ \t].*$/\1/' | xargs -L 1 -I \% xinput --map-to-output \% "${INT}"
+reposition-touchscreen.sh
