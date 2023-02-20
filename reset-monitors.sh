@@ -7,9 +7,14 @@
 #xrandr --auto
 # TODO: Run 'xrandr --auto' if no other monitors are connected
 
+# 1080p monitor, 1080p smaller monitor, laptop screen
 # 3840 * 3/4 = 2880
 # 2160 * 5/8 = 1350
-xrandr --output DP-2 --mode 1920x1080 --rate 120 --scale 1.5x1.5 --pos 0x1350 --output eDP-1 --pos 2880x2160 --output DP-3 --mode 1920x1080 --scale 2x2 --pos 2880x0
+#xrandr --output DP-2 --mode 1920x1080 --rate 120 --scale 1.5x1.5 --pos 0x1350 --output eDP-1 --pos 2880x2160 --output DP-3 --mode 1920x1080 --scale 2x2 --pos 2880x0
+
+# Big 4k monitor, medium-size 1080p, laptop monitor
+# 2160 * 1/4 = 540
+xrandr --output DP-1 --mode 1920x1080 --scale 1.5x1.5 --pos 0x540 --output DP-2 --mode 3840x2160 --pos 2880x0 --output eDP-1 --mode 3840x2160 --pos 2880x2160
 
 # TODO: Change compton settings
 
