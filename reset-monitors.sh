@@ -14,7 +14,10 @@
 
 # Big 4k monitor, medium-size 1080p, laptop monitor
 # 2160 * 1/4 = 540
-xrandr --output DP-1 --mode 1920x1080 --scale 1.5x1.5 --pos 0x540 --output DP-2 --mode 3840x2160 --pos 2880x0 --output eDP-1 --mode 3840x2160 --pos 2880x2160
+#xrandr --output DP-3 --mode 1920x1080 --scale 1.5x1.5 --pos 0x540 --output DP-1 --mode 3840x2160 --pos 2880x0 --scale 0.9999x0.9999 --output eDP-1 --mode 3840x2160 --pos 2880x2160 --scale 0.75x0.75
+
+# Big 4k monitor and laptop
+xrandr --output DP-1 --mode 3840x2160 --pos 0x0 --output eDP-1 --mode 3840x2160 --scale 0.75x0.75 --pos 960x2160
 
 # TODO: Change compton settings
 
