@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# TODO: Autodetect eDP name
 
 if swaymsg -t get_outputs | grep -q "normal"
 then
