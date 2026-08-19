@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+
+notes=()
+times=()
+t=0
+for arg in $@; do
+  if [[ $arg != 0 ]]; then
+    notes+=(sine $arg)
+    times+=(${t}s)
+  fi
+  t=$((t + 3500))
+done
+
+play -qn -c1 synth 1 ${notes[*]} \
+	fade 0.01 0.1 0.06 delay ${times[*]} gain -20

@@ -17,7 +17,7 @@ def parse(lines):
         line = lines[i]
         try:
             pipe_parts = line.split("|")
-            if pipe_parts[0] not in ["triton", "tdl-8lcr333", "lxl-cjzqn13"]:
+            if pipe_parts[0] not in ["triton", "metaph", "tdl-8lcr333", "lxl-cjzqn13"]:
                 is_continuation = True
             else:
                 try:

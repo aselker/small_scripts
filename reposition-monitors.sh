@@ -18,4 +18,4 @@ off_w=`echo $(( ($int_w-$ext_w)/2 )) | sed 's/^-//'`
 xrandr --output "${INT}" --pos ${off_w}x${ext_h} --output "${EXT}" --pos 0x0
 
 # Set touchscreen to control only the laptop screen
-xinput | sed -n -e '/pointer/,/keyboard/ p' | grep "ELAN Touchscreen" | sed 's/^.*id=\([0-9]*\)[ \t].*$/\1/' | xargs -L 1 -I \% xinput --map-to-output \% "${INT}"
+# xinput | sed -n -e '/pointer/,/keyboard/ p' | grep "ELAN Touchscreen" | sed 's/^.*id=\([0-9]*\)[ \t].*$/\1/' | xargs -L 1 -I \% xinput --map-to-output \% "${INT}"
