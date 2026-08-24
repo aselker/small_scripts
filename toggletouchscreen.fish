@@ -21,6 +21,7 @@ if xinput | grep -q "Xwayland"
 
 	reposition-touchscreen.sh
 else
-	swaymsg input 1386:20896:Wacom_Pen_and_multitouch_sensor_Finger events toggle
+	swaymsg input type:touch events toggle
+	swaymsg input type:touch map_to_output eDP-1
 end
 
